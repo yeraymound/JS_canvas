@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>001 practice</title>
+	<style>
+		canvas {
+			width: 600px;
+			height: 600px;
+		}
+	</style>
+</head>
+
+<body>
+	<canvas width="512" height="512" style="border: 4px solid #d3d3d3; fill: #d3d3d3;"></canvas>
+	<script>
+		const canvas = document.querySelector('canvas');
+		const context = canvas.getContext('2d');
+		const rectSize = [100, 100];
+		context.save();
+		context.translate(-0.5 * rectSize[0], -0.5 * rectSize[1]);
+		context.fillStyle = 'red';
+		context.beginPath();
+		context.rect(0.5 * canvas.width, 0.5 * canvas.height, ...rectSize);
+		context.fill();
+		context.restore();
+	</script>
+</body>
+</html>
